@@ -1,0 +1,2 @@
+class CieloError < StandardError
+end

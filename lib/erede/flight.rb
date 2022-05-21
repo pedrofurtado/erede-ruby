@@ -24,7 +24,7 @@ module EREDE
       @passenger = []
     end
 
-    def add_passender(passenger)
+    def add_passenger(passenger)
       if @passenger == nil
         @passenger = []
       end
