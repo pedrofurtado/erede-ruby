@@ -6,8 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
-erede*.gem
+*.gem
 .idea/
-
-# rspec failure tracking
 .rspec_status
