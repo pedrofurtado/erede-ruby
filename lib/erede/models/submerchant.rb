@@ -4,7 +4,15 @@ module Erede
       API_ATTRIBUTES = [
         :mcc,
         :city,
-        :country
+        :country,
+        :subMerchantID,
+        :address,
+        :city,
+        :state,
+        :country,
+        :cep,
+        :cnpj,
+        :taxIdNumber
       ]
     end
   end

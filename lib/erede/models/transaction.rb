@@ -42,6 +42,7 @@ module Erede
         :storageCard,
         :subscription,
         :threeDSecure,
+        :independentSalesOrganizationID,
         :tid,
         :urls,
         :paymentFacilitatorId,

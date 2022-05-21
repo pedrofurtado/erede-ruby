@@ -6,6 +6,7 @@ require 'erede/errors/cielo_error'
 require 'erede/environment'
 
 require 'erede/models/base'
+require 'erede/models/device'
 require 'erede/models/iata'
 require 'erede/models/authorization'
 require 'erede/models/document'

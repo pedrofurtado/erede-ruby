@@ -18,6 +18,8 @@ module Erede
         :returnMessage,
         :status,
         :subscription,
+        :softDescriptor,
+        :distributorAffiliation,
         :tid
       ]
     end
