@@ -6,10 +6,6 @@ module Erede
       @store = store
     end
 
-    def authorize(transaction)
-      create(transaction)
-    end
-
     def create(transaction)
       service = ::Erede::Services::CreateTransaction.new(@store, transaction)
       service.execute
@@ -25,7 +21,7 @@ module Erede
       service.execute
     end
 
-    def get_by_id(tid)
+    def get_by_tid(tid)
       service     = ::Erede::Services::GetTransaction.new(@store)
       service.tid = tid
       service.execute
@@ -44,19 +40,12 @@ module Erede
       service.execute
     end
 
-    def zero(transaction)
-      amount  = transaction.amount
-      capture = transaction.capture
-
-      transaction.amount  = 0
-      transaction.capture = true
-
-      transaction = create(transaction)
-
-      transaction.amount  = amount
-      transaction.capture = capture
-
-      transaction
+    def get_refund(tid, refundId)
+      service         = ::Erede::Services::GetTransaction.new(@store)
+      service.tid     = tid
+      service.refunds = true
+      service.refundId = refundId
+      service.execute
     end
   end
 end

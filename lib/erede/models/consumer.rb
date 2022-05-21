@@ -5,12 +5,12 @@ module Erede
       FEMALE = 'F'
 
       API_ATTRIBUTES = [
+        :name,
+        :email,
+        :phone, # Erede::Models::Phone
         :cpf,
         :documents, # Erede::Models::Document[]
-        :email,
-        :gender,
-        :name,
-        :phone # Erede::Models::Phone
+        :gender
       ]
     end
   end

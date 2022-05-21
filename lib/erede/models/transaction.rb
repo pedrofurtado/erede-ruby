@@ -9,34 +9,35 @@ module Erede
       ORIGIN_MASTERPASS    = 6
 
       API_ATTRIBUTES = [
+        :reference,
         :amount,
+        :cardholderName,
+        :installments,
+        :cardNumber,
+        :expirationMonth,
+        :expirationYear,
+        :securityCode,
         :authorization,
         :authorizationCode,
         :brand,
+        :brandTid,
         :cancelId,
         :capture,
         :cardBin,
-        :cardHolderName,
-        :cardNumber,
         :cart,
         :dateTime,
         :distributorAffiliation,
-        :expirationMonth,
-        :expirationYear,
         :iata,
-        :installments,
         :kind,
         :last4,
         :nsu,
         :origin,
-        :reference,
         :refundDateTime,
         :refundId,
         :refunds,
         :requestDateTime,
         :returnCode,
         :returnMessage,
-        :securityCode,
         :softDescriptor,
         :storageCard,
         :subscription,
@@ -46,12 +47,6 @@ module Erede
         :paymentFacilitatorId,
         :subMerchant
       ]
-
-      def add_url(url, kind = Url::CALLBACK)
-        @urls ||= []
-        @urls.push(Url.new(url, kind))
-        self
-      end
 
       def creditcard(card_number, security_code, expiration_month, expiration_year, holder_name)
         card(card_number, security_code, expiration_month, expiration_year, holder_name, Transaction::CREDIT)
