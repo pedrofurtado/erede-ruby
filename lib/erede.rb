@@ -1,93 +1,33 @@
-require 'erede/transaction_service'
-require 'erede/create_transaction_service'
-require 'erede/capture_transaction_service'
-require 'erede/cancel_transaction_service'
-require 'erede/get_transaction_service'
-require 'erede/version'
-require 'erede/iata'
-require 'erede/authorization'
-require 'erede/document'
-require 'erede/threedsecure'
-require 'erede/capture'
-require 'erede/consumer'
-require 'erede/transaction'
-require 'erede/submerchant'
-require 'erede/item'
-require 'erede/phone'
-require 'erede/url'
-require 'erede/refund'
-require 'erede/environment'
-require 'erede/store'
-require 'erede/passenger'
-require 'erede/flight'
-require 'erede/address'
-require 'erede/cart'
 require 'json'
+require 'net/http'
 
-module EREDE
-  USER_AGENT = 'eRede/1.0 (SDK Ruby)'
+require 'erede/errors/cielo_error'
 
-  class ERede
-    attr_accessor :store
+require 'erede/environment'
 
-    def initialize(store)
-      @store = store
-    end
+require 'erede/models/base'
+require 'erede/models/iata'
+require 'erede/models/authorization'
+require 'erede/models/document'
+require 'erede/models/three_d_secure'
+require 'erede/models/capture'
+require 'erede/models/consumer'
+require 'erede/models/transaction'
+require 'erede/models/submerchant'
+require 'erede/models/item'
+require 'erede/models/phone'
+require 'erede/models/url'
+require 'erede/models/refund'
+require 'erede/models/store'
+require 'erede/models/passenger'
+require 'erede/models/flight'
+require 'erede/models/address'
+require 'erede/models/cart'
 
-    def authorize(transaction)
-      create(transaction)
-    end
+require 'erede/services/base'
+require 'erede/services/create_transaction'
+require 'erede/services/capture_transaction'
+require 'erede/services/cancel_transaction'
+require 'erede/services/get_transaction'
 
-    def create(transaction)
-      service = CreateTransactionService.new(@store, transaction)
-
-      service.execute
-    end
-
-    def cancel(transaction)
-      service = CancelTransactionService.new(@store, transaction)
-
-      service.execute
-    end
-
-    def capture(transaction)
-      service = CaptureTransactionService.new(@store, transaction)
-
-      service.execute
-    end
-
-    def get_by_id(tid)
-      service = GetTransactionService.new(@store)
-      service.tid = tid
-
-      service.execute
-    end
-
-    def get_by_reference(reference)
-      service = GetTransactionService.new(@store)
-      service.reference = reference
-
-      service.execute
-    end
-
-    def get_refunds(tid)
-      service = GetTransactionService.new(@store)
-      service.tid = tid
-      service.refunds = true
-
-      service.execute
-    end
-
-    def zero(transaction)
-      amount = transaction.amount
-      capture = transaction.capture
-
-      transaction.amount = 0
-      transaction.capture = true
-      transaction = create(transaction)
-      transaction.amount = amount
-      transaction.capture = capture
-      transaction
-    end
-  end
-end
+require 'erede/sdk'

@@ -1,15 +1,40 @@
-# ERede SDK Ruby
+# ERede Ruby
 
-SDK de integração eRede
+SDK Ruby de integração eRede
 
 ```bash
 docker build -t erede_ruby .
-docker run --rm -v $(pwd):/app/ -it erede_ruby irb -I lib -r erede
-> EREDE::ERede.new(EREDE::Store.new('12312321', '12321334', EREDE::Environment.sandbox)).get_refunds(123)
-> EREDE::ERede.new(EREDE::Store.new('12312321', '12321334', EREDE::Environment.sandbox)).get_by_reference(123)
-> EREDE::ERede.new(EREDE::Store.new('12312321', '12321334', EREDE::Environment.sandbox)).get_by_id(233123)
-> EREDE::ERede.new(EREDE::Store.new('qwe', 'r34', EREDE::Environment.sandbox)).capture(EREDE::Transaction.new(12.88).tap { |t| t.tid = 4866 })
-> EREDE::ERede.new(EREDE::Store.new('qwe', 'r34', EREDE::Environment.sandbox)).cancel(EREDE::Transaction.new(12.88).tap { |t| t.tid = 5229 })
-> EREDE::ERede.new(EREDE::Store.new('qwe', 'r34', EREDE::Environment.sandbox)).create(EREDE::Transaction.new(12.88))
-> EREDE::ERede.new(EREDE::Store.new('qwe', 'r34', EREDE::Environment.sandbox)).authorize(EREDE::Transaction.new(12.88))
+docker run --rm -v $(pwd):/app/ -w /app/ -it erede_ruby irb -I lib -r erede
+docker run --rm -v $(pwd):/app/ -w /app/ -it erede_ruby bundle exec rake spec
+```
+
+```ruby
+store             = Erede::Models::Store.new
+store.token       = ''
+store.filiation   = ''
+store.environment = Erede::Environment.sandbox | Erede::Environment.production
+
+sdk = Erede::Sdk.new(store)
+
+sdk.get_refunds(123)
+sdk.get_by_reference(123)
+sdk.get_by_id(233123)
+
+capture_transaction        = Erede::Models::Transaction.new
+capture_transaction.amount = '1.99'
+capture_transaction.tid    = '123'
+sdk.capture(capture_transaction)
+
+cancel_transaction        = Erede::Models::Transaction.new
+cancel_transaction.amount = '1.99'
+cancel_transaction.tid    = '123'
+sdk.cancel(cancel_transaction)
+
+create_transaction        = Erede::Models::Transaction.new
+create_transaction.amount = '1.99'
+sdk.create(create_transaction)
+
+authorize_transaction        = Erede::Models::Transaction.new
+authorize_transaction.amount = '1.99'
+sdk.authorize(authorize_transaction)
 ```
