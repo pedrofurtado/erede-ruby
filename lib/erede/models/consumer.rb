@@ -1,15 +1,12 @@
 module Erede
   module Models
     class Consumer < ::Erede::Models::Base
-      MALE   = 'M'
-      FEMALE = 'F'
-
       API_ATTRIBUTES = [
         :name,
         :email,
-        :phone, # Erede::Models::Phone
+        :phone,
         :cpf,
-        :documents, # Erede::Models::Document[]
+        :documents,
         :gender
       ]
     end

@@ -8,12 +8,6 @@ module Erede
         :passenger,
         :to
       ]
-
-      def add_passenger(passenger)
-        @passenger ||= []
-        @passenger.push(passenger)
-        self
-      end
     end
   end
 end

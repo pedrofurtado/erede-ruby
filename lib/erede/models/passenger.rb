@@ -7,11 +7,6 @@ module Erede
         :phone,
         :ticket
       ]
-
-      def set_phone(ddd, number, type = Phone::CELLPHONE)
-        @phone = Phone.new(ddd, number, type)
-        self
-      end
     end
   end
 end

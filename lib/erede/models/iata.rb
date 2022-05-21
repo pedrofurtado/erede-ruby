@@ -6,12 +6,6 @@ module Erede
         :departureTax,
         :flight
       ]
-
-      def add_flight(flight)
-        @flight ||= []
-        @flight.push(flight)
-        self
-      end
     end
   end
 end

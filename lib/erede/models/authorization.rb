@@ -14,8 +14,6 @@ module Erede
         :nsu,
         :origin,
         :reference,
-        :returnCode,
-        :returnMessage,
         :status,
         :subscription,
         :softDescriptor,

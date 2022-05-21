@@ -16,7 +16,7 @@ module Erede
       end
 
       def execute
-        raise 'Not implemented'
+        raise NotImplementedError
       end
 
       def send_request(method, body = '')
@@ -37,7 +37,7 @@ module Erede
                                             end
                             )
 
-        raise "Something goes wrong: #{response.code} #{response.body}" if response.code.to_i >= 400
+        raise(Erede::Errors::CieloError, "Something goes wrong: #{response.code} #{response.body}") if response.code.to_i >= 400
 
         JSON.parse(response.body)
       end

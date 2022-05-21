@@ -82,6 +82,9 @@ sdk.get_by_reference(123)
 ## Testes
 
 ```bash
+# Entrar na pasta-raiz do repositório
+cd erede-ruby
+
 # Construir a imagem Docker
 docker build -t erede_ruby .
 
@@ -94,7 +97,7 @@ docker run --rm -v $(pwd):/app/ -w /app/ -it erede_ruby irb -I lib -r erede
 
 ## Links úteis
 
-- Swagger: https://developer.userede.com.br/dev-portal-swaggers/erede/swagger.json
-- Manual de referência em PDF: https://developer.userede.com.br/files/erede/integration_manual.pdf
-- Documentação da API: https://developer.userede.com.br/e-rede
-- Github oficial (com SDKs em outras linguagens): https://github.com/DevelopersRede
+- https://developer.userede.com.br/dev-portal-swaggers/erede/swagger.json
+- https://developer.userede.com.br/files/erede/integration_manual.pdf
+- https://developer.userede.com.br/e-rede
+- https://github.com/DevelopersRede
