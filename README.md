@@ -2,11 +2,7 @@
 
 SDK Ruby de integração eRede.
 
-<div style="max-width: 100px;">
-
 ![](./erede-logotipo.png)
-
-</div>
 
 ## Guia de uso
 
