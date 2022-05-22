@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'erede/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'erede'
+  spec.name        = 'erede-ruby-sdk'
   spec.version     = Erede::VERSION
   spec.authors     = ['Rede']
   spec.email       = ['neto.joaobatista@gmail.com']
