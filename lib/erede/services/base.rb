@@ -25,10 +25,7 @@ module Erede
         query_string = uri && uri.query && !uri.query.nil? && !uri.query.empty? ? "?#{uri.query}" : ''
 
         response = Net::HTTP.new(uri.host, uri.port)
-                            .tap do |net_http|
-                              net_http.use_ssl = uri.scheme == 'https'
-                              net_http.set_debug_output($stdout)
-                            end
+                            .tap { |net_http| net_http.use_ssl = uri.scheme == 'https' }
                             .request(
                               method.new(uri.path + query_string, { 'Content-Type': 'application/json', 'Transaction-Response': 'brand-return-opened' })
                                             .tap do |request|
@@ -37,8 +34,12 @@ module Erede
                                             end
                             )
 
+        if store.logger
+          store.logger.info("RedeRequest - #{method.to_s.split('::').last.upcase} #{uri} - Response #{response.code} #{response.body}")
+        end
+
         Erede::Responses::EredeResponse.new.tap do |erede_response|
-          erede_response.code = response.code
+          erede_response.code     = response.code
           erede_response.response = JSON.parse(response.body)
         end
       end

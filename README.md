@@ -11,6 +11,7 @@ SDK Ruby de integração eRede.
 store             = Erede::Models::Store.new
 store.token       = '6069a026cf454706990a801ab5fe8e36'
 store.filiation   = '73854967'
+store.logger      = Logger.new(STDOUT)
 store.environment = Erede::Environment.sandbox | Erede::Environment.production
 
 # Inicialização da SDK
@@ -50,7 +51,7 @@ sdk.capture(capture_transaction)
 # POST /v1/transactions/{tid}/refunds
 # https://developer.userede.com.br/e-rede#swagger_operations-Cancelamento-cancelarTransacao
 callback_url      = Erede::Models::Url.new
-callback_url.kind = Erede::Models::Url::CALLBACK | Erede::Models::Url::THREE_D_SECURE_FAILURE | Erede::Models::Url::THREE_D_SECURE_SUCCESS
+callback_url.kind = 'callback'
 callback_url.url  = 'https://cliente.callback.com.br'
 cancel_transaction        = Erede::Models::Transaction.new
 cancel_transaction.tid    = 123

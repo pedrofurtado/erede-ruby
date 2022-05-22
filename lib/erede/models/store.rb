@@ -6,7 +6,8 @@ module Erede
         :filiation
       ]
 
-      attr_accessor :environment
+      attr_accessor :environment,
+                    :logger
     end
   end
 end
