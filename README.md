@@ -1,6 +1,7 @@
 # ERede Ruby
 
 [![CI](https://github.com/pedrofurtado/erede-ruby-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/pedrofurtado/erede-ruby-sdk/actions/workflows/ci.yml)
+[![Gem Version](https://badge.fury.io/rb/erede-ruby-sdk.svg)](https://badge.fury.io/rb/erede-ruby-sdk)
 [![Gem](https://img.shields.io/gem/dt/erede-ruby-sdk.svg)]()
 [![license](https://img.shields.io/github/license/pedrofurtado/erede-ruby-sdk.svg)]()
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pedrofurtado/erede-ruby-sdk)
