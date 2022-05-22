@@ -1,4 +1,4 @@
-# ERede Ruby
+# ERede Ruby SDK
 
 [![CI](https://github.com/pedrofurtado/erede-ruby-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/pedrofurtado/erede-ruby-sdk/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/erede-ruby-sdk.svg)](https://badge.fury.io/rb/erede-ruby-sdk)
