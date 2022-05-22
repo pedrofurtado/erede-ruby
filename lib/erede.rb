@@ -1,7 +1,9 @@
 require 'json'
 require 'net/http'
 
-require 'erede/errors/cielo_error'
+require 'erede/errors/erede_error'
+
+require 'erede/responses/erede_response'
 
 require 'erede/environment'
 

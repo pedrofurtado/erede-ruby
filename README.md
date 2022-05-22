@@ -9,8 +9,8 @@ SDK Ruby de integração eRede.
 ```ruby
 # Configuração do ambiente
 store             = Erede::Models::Store.new
-store.token       = '123'
-store.filiation   = '456'
+store.token       = '6069a026cf454706990a801ab5fe8e36'
+store.filiation   = '73854967'
 store.environment = Erede::Environment.sandbox | Erede::Environment.production
 
 # Inicialização da SDK

@@ -1,6 +1,6 @@
 module Erede
   module Errors
-    class CieloError < StandardError
+    class EredeError < StandardError
     end
   end
 end

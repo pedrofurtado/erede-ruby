@@ -37,9 +37,10 @@ module Erede
                                             end
                             )
 
-        raise(Erede::Errors::CieloError, "Something goes wrong: #{response.code} #{response.body}") if response.code.to_i >= 400
-
-        JSON.parse(response.body)
+        Erede::Responses::EredeResponse.new.tap do |erede_response|
+          erede_response.code = response.code
+          erede_response.response = JSON.parse(response.body)
+        end
       end
     end
   end
