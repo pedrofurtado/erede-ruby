@@ -29,20 +29,20 @@ sdk = Erede::Sdk.new(store)
 create_transaction                        = Erede::Models::Transaction.new
 create_transaction.capture                = false
 create_transaction.kind                   = 'credit'
-create_transaction.reference              = 'pedido123'
+create_transaction.reference              = "#{(rand * 1000000).round}"
 create_transaction.amount                 = 2099
-create_transaction.installments           = 2
+create_transaction.installments           = nil
 create_transaction.cardholderName         = 'John Snow'
 create_transaction.cardNumber             = '5448280000000007'
-create_transaction.expirationMonth        = 12
+create_transaction.expirationMonth        = 1
 create_transaction.expirationYear         = 2028
-create_transaction.securityCode           = '235'
-create_transaction.softDescriptor         = 'string'
+create_transaction.securityCode           = '123'
+create_transaction.softDescriptor         = 'something'
 create_transaction.subscription           = false
 create_transaction.origin                 = 1
-create_transaction.distributorAffiliation = 0
-create_transaction.brandTid               = 'string'
-create_transaction.storageCard            = '1'
+create_transaction.distributorAffiliation = nil
+create_transaction.brandTid               = nil
+create_transaction.storageCard            = 0
 sdk.create(create_transaction)
 
 # Confirmar autorização da transação (captura)
