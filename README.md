@@ -13,6 +13,9 @@ SDK Ruby de integração eRede.
 ## Guia de uso
 
 ```ruby
+require 'logger'
+require 'erede'
+
 # Configuração do ambiente
 store             = Erede::Models::Store.new
 store.token       = '6069a026cf454706990a801ab5fe8e36'
