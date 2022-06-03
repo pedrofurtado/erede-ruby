@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    erede (3.0.0)
+    erede-ruby-sdk (3.0.2)
       bundler
       json
 
@@ -29,7 +29,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  erede!
+  erede-ruby-sdk!
   rake
   rspec
 

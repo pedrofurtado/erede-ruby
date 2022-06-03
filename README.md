@@ -107,4 +107,7 @@ docker run --rm -v $(pwd):/app/ -w /app/ -it erede_ruby irb -I lib -r erede
 - https://developer.userede.com.br/dev-portal-swaggers/erede/swagger.json
 - https://developer.userede.com.br/files/erede/integration_manual.pdf
 - https://developer.userede.com.br/e-rede
+- https://www.userede.com.br/novo/documentos/certificado-digital-rede/certificado-digital-atualizar
+- https://www.userede.com.br/novo/documentos/certificado-digital-rede
+- https://www.userede.com.br/content/dam/userede/website/documents/certificado-digital/Ecommerce_B64.zip
 - https://github.com/DevelopersRede

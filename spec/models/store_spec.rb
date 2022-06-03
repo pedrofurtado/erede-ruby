@@ -8,6 +8,7 @@ RSpec.describe Erede::Models::Store do
       expect(subject).to respond_to :token
       expect(subject).to respond_to :filiation
       expect(subject).to respond_to :environment
+      expect(subject).to respond_to :logger
     end
   end
 end
